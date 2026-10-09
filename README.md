@@ -10,6 +10,24 @@ O **Viva Bem** é um projeto voltado à saúde e ao bem-estar, com o objetivo de
 
 Promover a saúde e o bem-estar, contribuindo para a conscientização e facilitando o acesso a informações relacionadas à saúde.
 
+## proposta de valor
+
+Qual problema resolvemos?
+
+3.4 promover a saúde mental e o bem-estar
+3.5 Reforçar a prevenção e o tratamento do abuso de substâncias
+3.8 acesso a medicamentos e vacinas essenciais
+Para quem?
+
+para todos
+Como nossa solução ajuda?
+
+dicas sobre o bem-estar em todas as idades e localização de unidades de saúde
+
+Qual valor ela entrega?
+
+dicas por idade
+
 ## Problema
 
 A dificuldade de encontrar informações sobre saúde em um único lugar pode dificultar o acesso a conteúdos de conscientização, orientações gerais e informações sobre unidades de tratamento.
