@@ -5,8 +5,7 @@
 ## Problema
 
 ## Público-alvo
-
-## Proposta de Valor
+Público Geral 
 
 ## Benchmarking
 benchmark_1 - site einstein 
@@ -14,8 +13,6 @@ benchmark_2 - site tua saude
 benchmark_3 - site unimed 
 benchmark_4 - site veja saude
 benchmark_5 - site drauziovarella 
-
-## Requisitos
 
 ## User Stories
 Como usuário comum
@@ -26,22 +23,28 @@ de saúde e localizar unidades de tratamento.
 Assim eu tenho informações de forma unificada e consigo
 esclarecer minhas dúvidas.
 
-## Funcionalidades
+## Requisitos
+- página acessível, limpa e otimizada
 
+## Funcionalidades
+- login e cadastro 
+- pesquisar
+- acessar informações gerais de saude
+- calculadora IMC
+  
 ## Tecnologias Utilizadas
+React.js
 
 ## Framework Utilizado
+- React.js
 
 ## Como Executar
+npm run dev
 
 ## Protótipo
   Prototipação realizada pelo Stitch.IA - versão final Figma
   https://www.figma.com/design/CGFIxiiqGFxczUip4XIqFk/VIVA-BEM---Sa%C3%BAde-e-bem---estar?node-id=0-1&t=7sOJXvZklBvHiOoq-1
   
-## Aplicação
-
-## Processo de Desenvolvimento
-
 ## Integrantes
 
 [Rafaela Paz](https://github.com/Blightpb)
