@@ -9,10 +9,22 @@
 ## Proposta de Valor
 
 ## Benchmarking
+benchmark_1 - site einstein 
+benchmark_2 - site tua saude
+benchmark_3 - site unimed 
+benchmark_4 - site veja saude
+benchmark_5 - site drauziovarella 
 
 ## Requisitos
 
 ## User Stories
+Como usuário comum
+
+Eu quero ter acesso a conteúdos de conscientização, dicas
+de saúde e localizar unidades de tratamento.
+
+Assim eu tenho informações de forma unificada e consigo
+esclarecer minhas dúvidas.
 
 ## Funcionalidades
 
