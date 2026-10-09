@@ -9,6 +9,11 @@
 ## Proposta de Valor
 
 ## Benchmarking
+benchmark_1 - site einstein 
+benchmark_2 - site tua saude
+benchmark_3 - site unimed 
+benchmark_4 - site veja saude
+benchmark_5 - site drauziovarella 
 
 ## Requisitos
 
