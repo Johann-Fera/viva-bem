@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 import logoMark from './assets/VivaBem Logo.png'
 import phoneIcon from './assets/Container.png'
@@ -32,11 +33,11 @@ import sendIcon from './assets/Icon (9).png'
 import familyHero from './assets/family-hero.png'
 
 const navItems = [
-  { label: 'Início', href: '#inicio', active: true },
-  { label: 'Por Idades', href: '#etapas' },
+  { label: 'Início', href: '#/', page: 'home' },
+  { label: 'Por Idades', href: '#/idades', page: 'idades' },
   { label: 'Saúde da Criança', href: '#saude-crianca' },
   { label: 'Localizador SUS', href: '#localizador-sus' },
-  { label: 'Vacinação', href: '#vacinacao' },
+  { label: 'Vacinação', href: '#/vacinacao', page: 'vacinacao' },
   { label: 'Prevenção', href: '#prevencao' },
 ]
 
@@ -185,7 +186,34 @@ const footerGroups = [
   },
 ]
 
+const getCurrentPage = () => {
+  const hash = window.location.hash.replace(/^#\/?/, '')
+
+  if (hash.startsWith('idades') || hash.startsWith('etapas')) {
+    return 'idades'
+  }
+
+  if (hash.startsWith('vacinacao')) {
+    return 'vacinacao'
+  }
+
+  return 'home'
+}
+
 function App() {
+  const [currentPage, setCurrentPage] = useState(getCurrentPage)
+
+  useEffect(() => {
+    const handleRouteChange = () => setCurrentPage(getCurrentPage())
+
+    window.addEventListener('hashchange', handleRouteChange)
+    return () => window.removeEventListener('hashchange', handleRouteChange)
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [currentPage])
+
   return (
     <main className="portal-shell">
       <header className="site-header">
@@ -231,7 +259,7 @@ function App() {
         </div>
 
         <section className="brand-row" aria-label="Barra principal">
-          <a className="brand" href="#inicio" aria-label="VivaBem início">
+          <a className="brand" href="#/" aria-label="VivaBem início">
             <span className="brand-mark">
               <img src={logoMark} alt="" />
             </span>
@@ -253,13 +281,18 @@ function App() {
 
         <nav className="main-nav" aria-label="Navegação principal">
           {navItems.map((item) => (
-            <a className={item.active ? 'active' : undefined} href={item.href} key={item.href}>
+            <a
+              className={item.page === currentPage ? 'active' : undefined}
+              href={item.href}
+              key={item.href}
+            >
               {item.label}
             </a>
           ))}
         </nav>
       </header>
 
+      {currentPage === 'home' && (
       <section className="hero-section" id="inicio">
         <div className="hero-copy">
           <h1>
@@ -273,11 +306,11 @@ function App() {
           </p>
 
           <div className="hero-actions">
-            <a href="#vacinacao" className="primary-action">
+            <a href="#/vacinacao" className="primary-action">
               <img src={sendIcon} alt="" className="button-icon" />
               Ver Calendário Nacional de Vacinação
             </a>
-            <a href="#etapas" className="secondary-action">
+            <a href="#/idades" className="secondary-action">
               <img src={peopleIcon} alt="" className="button-icon" />
               Explorar por Faixa Etária
             </a>
@@ -303,8 +336,10 @@ function App() {
           </aside>
         </div>
       </section>
+      )}
 
-      <section className="vaccine-section" id="vacinacao" aria-labelledby="vaccine-title">
+      {currentPage === 'vacinacao' && (
+      <section className="vaccine-section standalone-page" id="vacinacao" aria-labelledby="vaccine-title">
         <div className="vaccine-hero">
           <div className="vaccine-copy">
             <h1 id="vaccine-title">
@@ -326,7 +361,7 @@ function App() {
                   aria-label="Buscar vacina"
                 />
               </label>
-              <a href="#etapas" className="vaccine-button primary">
+              <a href="#/idades" className="vaccine-button primary">
                 <img src={calendarIcon} alt="" />
                 Ver por Idade
               </a>
@@ -460,8 +495,10 @@ function App() {
           </div>
         </div>
       </section>
+      )}
 
-      <section className="age-section" id="etapas" aria-labelledby="age-title">
+      {currentPage === 'idades' && (
+      <section className="age-section standalone-page" id="etapas" aria-labelledby="age-title">
         <div className="age-intro">
           <div>
             <p className="eyebrow">Acompanhamento contínuo</p>
@@ -497,7 +534,9 @@ function App() {
           ))}
         </div>
       </section>
+      )}
 
+      {currentPage === 'home' && (
       <section className="quick-services" id="prevencao" aria-label="Atendimento rápido">
         {serviceCards.map((card) => (
           <article className="service-card" key={card.title}>
@@ -511,10 +550,11 @@ function App() {
           </article>
         ))}
       </section>
+      )}
 
       <footer className="footer-section">
         <div className="footer-brand">
-          <a className="brand" href="#inicio">
+          <a className="brand" href="#/">
             <span className="brand-mark">
               <img src={logoMark} alt="" />
             </span>
@@ -537,7 +577,7 @@ function App() {
             <section id={group.id} key={group.title}>
               <h2>{group.title}</h2>
               {group.links.map((link) => (
-                <a href="#inicio" key={link}>
+                <a href="#/" key={link}>
                   {link}
                 </a>
               ))}
