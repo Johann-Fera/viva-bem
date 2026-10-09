@@ -18,6 +18,13 @@ benchmark_5 - site drauziovarella
 ## Requisitos
 
 ## User Stories
+Como usuário comum
+
+Eu quero ter acesso a conteúdos de conscientização, dicas
+de saúde e localizar unidades de tratamento.
+
+Assim eu tenho informações de forma unificada e consigo
+esclarecer minhas dúvidas.
 
 ## Funcionalidades
 
