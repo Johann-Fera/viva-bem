@@ -31,3 +31,15 @@
 ## Processo de Desenvolvimento
 
 ## Integrantes
+
+## Inteligência Artificial
+
+  Ferramenta: Stitch.IA
+  Utilização:
+- auxílio na criação de páginas.
+
+  Ferramenta: Codex
+  Utilização:
+- auxílio na programação das tela;
+- correção de erros de código.  
+  
