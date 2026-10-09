@@ -32,6 +32,11 @@
 
 ## Integrantes
 
+[Rafaela Paz](https://github.com/Blightpb)
+[Johann Arruda](https://github.com/Johann-Fera)
+[Guilherme Castro](https://github.com/Guilherme-Castro-Oil)
+
+
 ## Inteligência Artificial
 
   Ferramenta: Stitch.IA
