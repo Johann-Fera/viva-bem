@@ -195,8 +195,9 @@ input:focus-visible {
   font-weight: 800;
 }
 
-.main-nav a:first-child {
+.main-nav a.active {
   color: #003f3d;
+  border-bottom-color: #23a79d;
 }
 
 .main-nav a {
@@ -207,6 +208,176 @@ input:focus-visible {
 .main-nav a:hover {
   color: #006b66;
   border-bottom-color: #23a79d;
+}
+
+.page-top-anchor {
+  display: block;
+  scroll-margin-top: 154px;
+}
+
+.age-section {
+  padding: 34px 36px 78px;
+  scroll-margin-top: 154px;
+  background: #edf5fa;
+}
+
+.age-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 760px) minmax(240px, 1fr);
+  align-items: end;
+  gap: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: #00625f;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.age-intro h1 {
+  max-width: 690px;
+  margin: 0;
+  color: #064f4d;
+  font-size: clamp(34px, 3.1vw, 44px);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.age-intro p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: #526b74;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.guide-link {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  margin-bottom: 3px;
+  gap: 10px;
+  color: #005d5a;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.guide-link img {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
+.age-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 40px;
+  gap: 24px;
+}
+
+.age-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 430px;
+  padding: 25px 24px 24px;
+  border-radius: 12px;
+  color: #334f56;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(20, 75, 84, 0.08);
+}
+
+.age-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.age-card-top img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.age-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: #00605d;
+  background: #e8fbf7;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.age-card.purple .age-pill {
+  color: #5c31b1;
+  background: #f0e9ff;
+}
+
+.age-card.blue .age-pill {
+  color: #0067b1;
+  background: #e6f4ff;
+}
+
+.age-card h2 {
+  margin: 24px 0 12px;
+  color: #00504e;
+  font-size: 23px;
+  line-height: 1.24;
+  letter-spacing: 0;
+}
+
+.age-card.purple h2 {
+  color: #5c31b1;
+}
+
+.age-card.blue h2 {
+  color: #0067b1;
+}
+
+.age-card p {
+  margin: 0;
+  color: #526971;
+  font-size: 15px;
+  line-height: 1.48;
+}
+
+.age-card ul {
+  display: grid;
+  margin: 26px 0 0;
+  padding: 0;
+  gap: 14px;
+  list-style: none;
+}
+
+.age-card li {
+  position: relative;
+  padding-left: 20px;
+  color: #3e545a;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.age-card li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #006d68;
+  content: "✓";
+  font-weight: 900;
+}
+
+.age-card.purple li::before {
+  color: #6a3dc2;
+}
+
+.age-card.blue li::before {
+  color: #006ebf;
 }
 
 .hero-section {
@@ -492,6 +663,15 @@ input:focus-visible {
     padding-top: 54px;
   }
 
+  .age-intro,
+  .age-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guide-link {
+    justify-self: start;
+  }
+
   .hero-visual {
     min-height: 390px;
   }
@@ -509,6 +689,7 @@ input:focus-visible {
 
   .brand-row,
   .main-nav,
+  .age-section,
   .hero-section,
   .quick-services,
   .footer-section {
@@ -541,6 +722,36 @@ input:focus-visible {
     min-height: auto;
     padding-block: 44px;
     gap: 34px;
+  }
+
+  .age-section {
+    padding-block: 30px 54px;
+  }
+
+  .age-intro,
+  .age-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .age-intro {
+    gap: 20px;
+  }
+
+  .age-intro h1 {
+    font-size: clamp(30px, 9vw, 38px);
+  }
+
+  .age-intro p:not(.eyebrow) {
+    font-size: 16px;
+  }
+
+  .age-grid {
+    margin-top: 30px;
+    gap: 18px;
+  }
+
+  .age-card {
+    min-height: auto;
   }
 
   .hero-copy h1 {
