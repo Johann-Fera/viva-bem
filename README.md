@@ -96,8 +96,6 @@ Foram utilizados como referências os seguintes sites da área da saúde:
 
 5. Acesse o endereço local exibido no terminal, geralmente `http://localhost:5173`.
 
-**Observação:** substitua `URL_DO_REPOSITORIO` pelo endereço real do repositório GitHub e `nome-da-pasta` pelo nome da pasta do projeto.
-
 ## Protótipo
 
 A prototipação inicial foi realizada com o auxílio do Stitch IA, e a versão final foi desenvolvida no Figma.
