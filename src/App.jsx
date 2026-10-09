@@ -1,4 +1,17 @@
 import './App.css'
+import logoMark from './assets/VivaBem Logo.png'
+import phoneIcon from './assets/Container.png'
+import peopleIcon from './assets/Icon (10).png'
+import emergencyIcon from './assets/Icon (11).png'
+import headsetIcon from './assets/Icon (12).png'
+import careIcon from './assets/Icon (13).png'
+import shieldIcon from './assets/Icon (14).png'
+import accessibilityIcon from './assets/Icon (3).png'
+import contrastIcon from './assets/Icon (4).png'
+import verifiedIcon from './assets/Icon (5).png'
+import searchIcon from './assets/Icon (8).png'
+import sendIcon from './assets/Icon (9).png'
+import familyHero from './assets/family-hero.png'
 
 const navItems = [
   { label: 'Início', href: '#inicio' },
@@ -10,17 +23,17 @@ const navItems = [
 
 const serviceCards = [
   {
-    icon: '✱',
+    icon: emergencyIcon,
     title: 'SAMU 192',
     text: 'Urgências médicas e acidentes 24 horas',
   },
   {
-    icon: '◴',
+    icon: headsetIcon,
     title: 'Disque Saúde 136',
     text: 'Informações sobre serviços, medicamentos e vacinas',
   },
   {
-    icon: '♧',
+    icon: careIcon,
     title: 'CVV 188',
     text: 'Apoio emocional gratuito e orientação preventiva',
   },
@@ -68,7 +81,10 @@ function App() {
       <header className="site-header">
         <div className="access-bar">
           <div className="access-left">
-            <span>✚ Acessibilidade Cidadã</span>
+            <span>
+              <img src={accessibilityIcon} alt="" className="tiny-icon" />
+              Acessibilidade Cidadã
+            </span>
             <button type="button" aria-label="Diminuir tamanho do texto">
               A-
             </button>
@@ -79,21 +95,36 @@ function App() {
               A+
             </button>
             <button type="button" aria-label="Ativar alto contraste">
-              ◐ Alto Contraste
+              <img src={contrastIcon} alt="" className="tiny-icon" />
+              Alto Contraste
             </button>
           </div>
 
           <div className="access-right">
-            <span>☑ Validado pelo SUS & MS</span>
-            <span>✣ SAMU 192</span>
-            <span>☏ CVV 188</span>
-            <span>☎ Disque Saúde 136</span>
+            <span>
+              <img src={verifiedIcon} alt="" className="tiny-icon" />
+              Validado pelo SUS & MS
+            </span>
+            <span>
+              <img src={emergencyIcon} alt="" className="tiny-icon" />
+              SAMU 192
+            </span>
+            <span>
+              <img src={careIcon} alt="" className="tiny-icon" />
+              CVV 188
+            </span>
+            <span>
+              <img src={phoneIcon} alt="" className="tiny-icon" />
+              Disque Saúde 136
+            </span>
           </div>
         </div>
 
         <section className="brand-row" aria-label="Barra principal">
           <a className="brand" href="#inicio" aria-label="VivaBem início">
-            <span className="brand-mark">⚕</span>
+            <span className="brand-mark">
+              <img src={logoMark} alt="" />
+            </span>
             <span>
               <strong>VivaBem</strong>
               <small>Saúde Integral & Cidadania</small>
@@ -101,21 +132,13 @@ function App() {
           </a>
 
           <label className="search-box">
-            <span>⌕</span>
+            <img src={searchIcon} alt="" className="search-icon" />
             <input
               type="search"
               placeholder="Buscar doenças, UBS, vacinas, exames..."
               aria-label="Buscar no portal"
             />
           </label>
-
-          <div className="profile-actions">
-            <a href="#login">Entrar / Cadastro</a>
-            <button type="button" className="profile-button">
-              <span className="avatar">◉</span>
-              Meu perfil
-            </button>
-          </div>
         </section>
 
         <nav className="main-nav" aria-label="Navegação principal">
@@ -142,33 +165,22 @@ function App() {
 
           <div className="hero-actions">
             <a href="#servicos" className="primary-action">
-              <span>↗</span>
+              <img src={sendIcon} alt="" className="button-icon" />
               Encontrar Serviços Gratuitos Perto de Mim
             </a>
             <a href="#etapas" className="secondary-action">
-              <span>♙</span>
+              <img src={peopleIcon} alt="" className="button-icon" />
               Explorar por Faixa Etária
             </a>
           </div>
         </div>
 
-        <div
-          className="hero-visual"
-          role="img"
-          aria-label="Profissionais de saúde em atendimento comunitário"
-        >
-          <div className="clinic-scene">
-            <div className="clinic-sign">UNIDADE DE SAÚDE DA FAMÍLIA</div>
-            <div className="sun-glow" />
-            <div className="people-group">
-              <span className="person elder" />
-              <span className="person child" />
-              <span className="person adult" />
-              <span className="person nurse" />
-            </div>
-            <div className="plant plant-one" />
-            <div className="plant plant-two" />
-          </div>
+        <div className="hero-visual">
+          <img
+            src={familyHero}
+            alt="Família conversando com uma profissional de saúde em uma unidade de atendimento"
+            className="family-photo"
+          />
 
           <aside className="notice-card">
             <span className="notice-dot" />
@@ -186,7 +198,9 @@ function App() {
       <section className="quick-services" id="servicos" aria-label="Atendimento rápido">
         {serviceCards.map((card) => (
           <article className="service-card" key={card.title}>
-            <span className="service-icon">{card.icon}</span>
+            <span className="service-icon">
+              <img src={card.icon} alt="" />
+            </span>
             <div>
               <h2>{card.title}</h2>
               <p>{card.text}</p>
@@ -198,7 +212,9 @@ function App() {
       <footer className="footer-section">
         <div className="footer-brand">
           <a className="brand" href="#inicio">
-            <span className="brand-mark">⚕</span>
+            <span className="brand-mark">
+              <img src={logoMark} alt="" />
+            </span>
             <span>
               <strong>VivaBem Saúde</strong>
             </span>
@@ -208,7 +224,10 @@ function App() {
             e esclarecimento transparente a serviço de todas as famílias do
             Brasil.
           </p>
-          <strong className="curation">♡ Conteúdo com Curadoria Médica Familiar</strong>
+          <strong className="curation">
+            <img src={shieldIcon} alt="" className="tiny-icon" />
+            Conteúdo com Curadoria Médica Familiar
+          </strong>
         </div>
 
         <div className="footer-links" id="etapas">

@@ -42,6 +42,21 @@
   white-space: nowrap;
 }
 
+.access-left span,
+.access-right span,
+.access-left button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tiny-icon {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
 .access-left button {
   min-width: 30px;
   min-height: 22px;
@@ -76,13 +91,20 @@ input:focus-visible {
 
 .brand-mark {
   display: grid;
-  width: 28px;
-  height: 28px;
+  width: 31px;
+  height: 31px;
   place-items: center;
   border-radius: 6px;
   color: #007c77;
-  background: #e5f5f1;
+  background: #eef9f7;
   box-shadow: inset 0 0 0 1px rgba(0, 98, 95, 0.12);
+  overflow: hidden;
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand strong {
@@ -120,6 +142,13 @@ input:focus-visible {
   color: #355257;
   background: transparent;
   font-size: 14px;
+}
+
+.search-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.72;
 }
 
 .profile-actions {
@@ -233,6 +262,17 @@ input:focus-visible {
   line-height: 1.2;
 }
 
+.button-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.primary-action .button-icon {
+  filter: brightness(0) invert(1);
+}
+
 .primary-action {
   max-width: 462px;
   color: #fff;
@@ -262,150 +302,22 @@ input:focus-visible {
   box-shadow: 0 26px 34px rgba(0, 72, 69, 0.24);
 }
 
-.clinic-scene {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.2), rgba(1, 75, 70, 0.06)),
-    linear-gradient(115deg, #dae8d5 0%, #f5d99f 45%, #94d4c6 100%);
-}
-
-.clinic-scene::before {
+.hero-visual::after {
   position: absolute;
   inset: 0;
   content: "";
-  background:
-    linear-gradient(90deg, transparent 0 17%, rgba(255, 255, 255, 0.42) 17% 19%, transparent 19% 37%, rgba(255, 255, 255, 0.35) 37% 39%, transparent 39%),
-    linear-gradient(0deg, transparent 0 28%, rgba(255, 255, 255, 0.36) 28% 31%, transparent 31% 58%, rgba(255, 255, 255, 0.28) 58% 60%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 58%, rgba(0, 71, 68, 0.28));
 }
 
-.clinic-sign {
+.family-photo {
   position: absolute;
-  top: 32px;
-  left: 34px;
-  z-index: 2;
-  padding: 9px 18px;
-  border-radius: 4px;
-  color: #eafffd;
-  background: #1c8a82;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0;
-}
-
-.sun-glow {
-  position: absolute;
-  top: -46px;
-  right: -30px;
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  background: rgba(255, 247, 175, 0.78);
-  filter: blur(18px);
-}
-
-.people-group {
-  position: absolute;
-  right: 48px;
-  bottom: 70px;
-  left: 58px;
-  height: 240px;
-}
-
-.person {
-  position: absolute;
-  bottom: 0;
-  display: block;
-  border-radius: 999px 999px 22px 22px;
-  box-shadow: inset 0 -12px 0 rgba(0, 0, 0, 0.08);
-}
-
-.person::before {
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  width: 58px;
-  height: 58px;
-  content: "";
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: #bd7d55;
-  box-shadow: inset -9px -3px 0 rgba(0, 0, 0, 0.08);
-}
-
-.elder {
-  left: 8%;
-  width: 88px;
-  height: 142px;
-  background: #6f9f90;
-}
-
-.elder::before {
-  background: #c99167;
-  box-shadow:
-    inset -10px -4px 0 rgba(0, 0, 0, 0.08),
-    0 -12px 0 -4px #f2f0e7;
-}
-
-.child {
-  left: 26%;
-  width: 70px;
-  height: 96px;
-  background: #f0c66d;
-}
-
-.child::before {
-  width: 44px;
-  height: 44px;
-  top: -34px;
-  background: #8f5f48;
-}
-
-.adult {
-  left: 42%;
-  width: 86px;
-  height: 125px;
-  background: #d66757;
-}
-
-.nurse {
-  right: 4%;
-  width: 95px;
-  height: 182px;
-  background: #0c9b95;
-}
-
-.nurse::after {
-  position: absolute;
-  top: 22px;
-  left: 22px;
-  width: 52px;
-  height: 7px;
-  content: "";
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 16px 0 rgba(255, 255, 255, 0.42);
-}
-
-.plant {
-  position: absolute;
-  bottom: -18px;
-  border-radius: 50% 50% 0 0;
-  background: #29775e;
-  opacity: 0.55;
-}
-
-.plant-one {
-  left: -16px;
-  width: 170px;
-  height: 105px;
-}
-
-.plant-two {
-  right: 20px;
-  width: 220px;
-  height: 82px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .notice-card {
@@ -464,8 +376,17 @@ input:focus-visible {
 }
 
 .service-icon {
-  font-size: 36px;
-  line-height: 1;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.service-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .service-card h2 {
@@ -498,6 +419,8 @@ input:focus-visible {
 
 .curation {
   display: inline-flex;
+  align-items: center;
+  gap: 7px;
   color: #006761;
   font-size: 12px;
 }
@@ -672,11 +595,8 @@ input:focus-visible {
     border-radius: 14px;
   }
 
-  .people-group {
-    right: 20px;
-    left: 22px;
-    transform: scale(0.86);
-    transform-origin: bottom center;
+  .family-photo {
+    object-position: 58% center;
   }
 
   .notice-card {
