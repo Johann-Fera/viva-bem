@@ -35,10 +35,10 @@ import familyHero from './assets/family-hero.png'
 const navItems = [
   { label: 'Início', href: '#/', page: 'home' },
   { label: 'Por Idades', href: '#/idades', page: 'idades' },
-  { label: 'Saúde da Criança', href: '#saude-crianca' },
-  { label: 'Localizador SUS', href: '#localizador-sus' },
+  { label: 'Saúde da Criança', href: '#/saude-crianca', page: 'saude-crianca' },
+  { label: 'Localizador SUS', href: '#/localizador-sus', page: 'localizador-sus' },
   { label: 'Vacinação', href: '#/vacinacao', page: 'vacinacao' },
-  { label: 'Prevenção', href: '#prevencao' },
+  { label: 'Prevenção', href: '#/prevencao', page: 'prevencao' },
 ]
 
 const ageCards = [
@@ -150,6 +150,123 @@ const serviceCards = [
   },
 ]
 
+const careFilters = [
+  ['UBS / Posto de Saúde', medicalPlusIcon],
+  ['Vacinação Atualizada', vaccineVialIcon],
+  ['CAPS / Saúde Mental', careIcon],
+  ['Academia da Saúde & Práticas', peopleIcon],
+  ['Odontologia Gratuita (CEO)', shieldIcon],
+  ['Saúde da Mulher & Pré-Natal', personIcon],
+]
+
+const susUnits = [
+  {
+    type: 'ATENÇÃO PRIMÁRIA À SAÚDE',
+    title: 'UBS Vila Mariana - Dr. Geraldo',
+    distance: '850m de você',
+    hours: 'Seg a Sex: 07:00 às 19:00 (Sábados até 12h)',
+    address: 'Rua Domingos de Morais, 1820 - Vila Mariana',
+    phone: '(11) 5084-2190',
+    tags: ['Vacinação', 'Farmácia Popular', 'Pré-Natal', 'Dentista'],
+    tone: 'teal',
+    icon: medicalPlusIcon,
+  },
+  {
+    type: 'SAÚDE MENTAL & ESCUTA ACOLHEDORA',
+    title: 'CAPS II Adulto Esperança',
+    distance: '1.4 km de você',
+    hours: 'Seg a Sex: 08:00 às 18:00 (Acolhimento imediato)',
+    address: 'Av. Lins de Vasconcelos, 1140 - Cambuci',
+    phone: '(11) 3277-4402',
+    tags: ['Sem Encaminhamento', 'Psicologia', 'Oficinas Terapêuticas'],
+    tone: 'purple',
+    icon: careIcon,
+  },
+  {
+    type: 'PRÁTICAS INTEGRATIVAS & EXERCÍCIO',
+    title: 'Polo Academia da Saúde Ibirapuera',
+    distance: '600m de você',
+    hours: 'Seg a Sex: 06:30 às 11:30 | 16:00 às 19:30',
+    address: 'Praça Cidade de Milão, s/n - Aclimação',
+    phone: '(11) 5081-3318',
+    tags: ['Lian Gong', 'Alongamento 60+', 'Educador Físico SUS'],
+    tone: 'blue',
+    icon: peopleIcon,
+  },
+]
+
+const preventionSteps = [
+  {
+    number: '1',
+    title: 'Documento de Identificação',
+    text: 'Leve qualquer documento oficial com foto (RG, CNH, Carteira de Trabalho) ou certidão de nascimento no caso de bebês e crianças pequenas. O CPF agiliza o registro no prontuário eletrônico.',
+    note: 'Válido para brasileiros e estrangeiros',
+    tone: 'teal',
+  },
+  {
+    number: '2',
+    title: 'Caderneta ou Cartão SUS',
+    text: 'Se tiver a caderneta física em mãos, leve para registro manual. Perdeu a caderneta? Não deixe de ir: a equipe da UBS emite uma segunda via gratuitamente na hora e localiza suas doses anteriores no e-SUS.',
+    note: 'Histórico resgatado digitalmente',
+    tone: 'teal',
+  },
+  {
+    number: '3',
+    title: 'Sem Pedido Médico e Sem Agendamento',
+    text: 'A imunização é de livre demanda. Você não precisa passar por consulta prévia nem apresentar receita de médico para as vacinas de rotina e campanhas ativas.',
+    note: 'Atendimento direto na Sala de Vacinas',
+    tone: 'blue',
+  },
+]
+
+const mythCards = [
+  {
+    tag: 'MITO COMUM',
+    meta: 'Dúvida frequente',
+    title: '"Criança com coriza ou resfriado leve não pode tomar vacina?"',
+    fact: 'Sintomas leves como coriza, tosse discreta ou febre baixa não contraindicam a vacinação. O adiamento só é necessário em caso de febre alta persistente ou doença aguda grave.',
+    text: 'Não perca a viagem à UBS por causa de um resfriado corriqueiro. A equipe da sala de vacinas avalia a criança na hora com carinho.',
+  },
+  {
+    tag: 'MITO COMUM',
+    meta: 'Aplicação combinada',
+    title: '"Tomar mais de uma vacina no mesmo dia sobrecarrega o organismo?"',
+    fact: 'O sistema imune humano lida diariamente com milhões de antígenos. A aplicação simultânea é segura, recomendada pela OMS e acelera a proteção.',
+    text: 'Tomar a vacina da Gripe junto com a de Covid-19 ou vacinas pediátricas conjuntas não aumenta o risco de efeitos adversos.',
+  },
+  {
+    tag: 'MITO COMUM',
+    meta: 'SUS x Clínicas Privadas',
+    title: '"As vacinas do SUS têm qualidade ou eficácia inferior às particulares?"',
+    fact: 'As vacinas do SUS seguem o padrão ouro internacional. Produzidas por centros de excelência como Butantan e Fiocruz, passam por rigorosos testes da ANVISA.',
+    text: 'O Programa Nacional de Imunizações do Brasil é referência mundial e erradicou a varíola e a poliomielite em território nacional.',
+  },
+]
+
+const neonatalCards = [
+  ['Teste do Pezinho (PNTN)', 'Pequena gotinha de sangue do calcanhar capaz de detectar fenilcetonúria, hipotireoidismo congênito, anemia falciforme, fibrose cística, hiperplasia adrenal congênita e deficiência de biotinidase.'],
+  ['Teste do Olhinho (Reflexo Vermelho)', 'Avaliação oftalmológica com foco luminoso antes da alta. Identifica de forma precoce catarata congênita, glaucomas congênitos, retinoblastoma e infecções oculares.'],
+  ['Teste da Orelhinha (Emissões Otoacústicas)', 'Exame realizado preferencialmente com o bebê dormindo. Detecta perdas auditivas congênitas garantindo reabilitação linguística antes dos 6 meses.'],
+  ['Teste do Coraçãozinho (Oximetria)', 'Mede os níveis de oxigênio no sangue da mãozinha e no pezinho da criança antes da alta hospitalar. Identifica cardiopatias congênitas críticas silenciosas antes de sintomas graves.'],
+  ['Teste da Linguinha (Frênulo Lingual)', 'Avaliação fonoaudiológica que identifica alterações no frênulo da língua para orientar mamadas, prevenir dor precoce e desmame precoce.'],
+]
+
+const infantVaccineCards = [
+  ['Ao nascer', ['Primeira Proteção Imediata', 'BCG protege contra formas graves da tuberculose', 'Hepatite B previne transmissão no primeiro contato']],
+  ['2 meses', ['Mês Decisivo de Imunização', 'Pentavalente', 'VIP', 'Pneumocócica 10V', 'Rotavírus humano']],
+  ['3 meses', ['Proteção contra Meningite', 'Meningocócica C protege contra meningite bacteriana e meningococcemia']],
+  ['4 meses', ['Segundas Doses Fundamentais', 'Pentavalente', 'VIP', 'Pneumocócica 10V', 'Rotavírus humano']],
+  ['5 meses', ['Consolidação do 1º Semestre', 'Meningocócica C', 'Reforço do acompanhamento da Caderneta']],
+  ['6 meses', ['Fim do Primeiro Ano', 'Rotina de reforços', 'Influenza em campanha anual']],
+]
+
+const nutritionMilestones = [
+  ['Até os 6 Meses', 'Exclusivo', 'Leite materno exclusivo demanda livre, sem água, chás ou sucos.'],
+  ['Introdução aos 6 Meses', 'Comida de verdade', 'Pratos com alimentos naturais, textura amassada e evolução gradual.'],
+  ['Zero Açúcar até 2 Anos', 'Proteção metabólica', 'Evite açúcar, ultraprocessados e bebidas adoçadas.'],
+  ['Vitamina D & Ferro no SUS', 'Apoio preventivo', 'Suplementação orientada pela UBS conforme acompanhamento.'],
+]
+
 const footerGroups = [
   {
     id: 'saude-crianca',
@@ -195,6 +312,26 @@ const getCurrentPage = () => {
 
   if (hash.startsWith('vacinacao')) {
     return 'vacinacao'
+  }
+
+  if (hash.startsWith('saude-crianca')) {
+    return 'saude-crianca'
+  }
+
+  if (hash.startsWith('localizador-sus')) {
+    return 'localizador-sus'
+  }
+
+  if (hash.startsWith('prevencao')) {
+    return 'prevencao'
+  }
+
+  if (hash.startsWith('cadastro')) {
+    return 'cadastro'
+  }
+
+  if (hash.startsWith('login')) {
+    return 'login'
   }
 
   return 'home'
@@ -277,6 +414,14 @@ function App() {
               aria-label="Buscar no portal"
             />
           </label>
+
+          <div className="profile-actions">
+            <a href="#/login">Entrar / Cadastro</a>
+            <a className="profile-button" href="#/login">
+              <img src={personIcon} alt="" />
+              Meu perfil
+            </a>
+          </div>
         </section>
 
         <nav className="main-nav" aria-label="Navegação principal">
@@ -365,7 +510,7 @@ function App() {
                 <img src={calendarIcon} alt="" />
                 Ver por Idade
               </a>
-              <a href="#localizador-sus" className="vaccine-button ghost">
+              <a href="#/localizador-sus" className="vaccine-button ghost">
                 <img src={pinIcon} alt="" />
                 UBS Mais Próxima
               </a>
@@ -459,7 +604,7 @@ function App() {
                 <img src={coldChainIcon} alt="" />
                 Temperatura verificada há 4 min pela Rede de Frio
               </p>
-              <a href="#localizador-sus">Como Chegar à Unidade</a>
+              <a href="#/localizador-sus">Como Chegar à Unidade</a>
             </div>
           </article>
 
@@ -476,7 +621,7 @@ function App() {
                   <strong>3 Postos com Sala de Vacina Climatizada</strong>
                   <p>Num raio de 3 km do seu CEP</p>
                 </div>
-                <a href="#localizador-sus">Ampliar</a>
+                <a href="#/localizador-sus">Ampliar</a>
               </div>
             </article>
 
@@ -536,7 +681,314 @@ function App() {
       </section>
       )}
 
-      {currentPage === 'home' && (
+      {currentPage === 'localizador-sus' && (
+        <section className="locator-page standalone-page" aria-labelledby="locator-title">
+          <div className="page-heading">
+            <h1 id="locator-title">Encontre Atendimento Gratuito no seu Bairro ou Município</h1>
+            <p>
+              Descubra onde tomar vacinas, consultar médico de família, retirar remédios
+              gratuitos ou participar de grupos de bem-estar.
+            </p>
+          </div>
+
+          <div className="locator-search-panel">
+            <div className="locator-search-row">
+              <label className="locator-input">
+                <img src={searchIcon} alt="" />
+                <input aria-label="Localização" defaultValue="Vila Mariana, São Paulo - SP" />
+              </label>
+              <button type="button" className="soft-button">
+                <img src={routeIcon} alt="" />
+                Usar Minha Localização
+              </button>
+              <button type="button" className="solid-button">Buscar</button>
+            </div>
+
+            <div className="filter-head">
+              <strong>Filtrar por tipo de cuidado essencial:</strong>
+              <span>Selecione para refinar</span>
+            </div>
+            <div className="care-filter-list">
+              {careFilters.map(([label, icon], index) => (
+                <button className={index === 0 ? 'selected' : undefined} type="button" key={label}>
+                  <img src={icon} alt="" />
+                  {label}
+                </button>
+              ))}
+            </div>
+            <div className="locator-status">
+              <span>
+                <img src={verifiedIcon} alt="" />
+                Exibindo unidades com estoque ativo de medicamentos básicos e vacinas
+              </span>
+              <strong>3 unidades públicas encontradas no raio de 2km</strong>
+            </div>
+          </div>
+
+          <div className="unit-grid">
+            {susUnits.map((unit) => (
+              <article className={`unit-card ${unit.tone}`} key={unit.title}>
+                <div className="unit-card-top">
+                  <span className="unit-card-icon">
+                    <img src={unit.icon} alt="" />
+                  </span>
+                  <b>{unit.distance}</b>
+                </div>
+                <p className="unit-type">{unit.type}</p>
+                <h2>{unit.title}</h2>
+                <div className="unit-info">
+                  <span><img src={clockIcon} alt="" />{unit.hours}</span>
+                  <span><img src={pinIcon} alt="" />{unit.address}</span>
+                  <span><img src={callIcon} alt="" />{unit.phone}</span>
+                </div>
+                <div className="unit-tags">
+                  {unit.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                <div className="unit-actions">
+                  <a href="#/localizador-sus">
+                    <img src={routeIcon} alt="" />
+                    Como Chegar
+                  </a>
+                  <button type="button" aria-label={`Ligar para ${unit.title}`}>
+                    <img src={callIcon} alt="" />
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {currentPage === 'prevencao' && (
+        <section className="prevention-page standalone-page" aria-labelledby="prevention-title">
+          <div className="center-heading">
+            <p className="eyebrow">Acesso universal & descomplicado</p>
+            <h1 id="prevention-title">Como Vacinar: Seus Direitos e 3 Passos Simples</h1>
+            <p>
+              A vacinação no SUS é um direito de todos e um dever do Estado. Nenhuma pessoa
+              pode ser impedida de vacinar por falta de comprovante de residência ou caderneta
+              física antiga.
+            </p>
+          </div>
+
+          <div className="steps-grid">
+            {preventionSteps.map((step) => (
+              <article className={`step-card ${step.tone}`} key={step.number}>
+                <span>{step.number}</span>
+                <h2>{step.title}</h2>
+                <p>{step.text}</p>
+                <strong>
+                  <img src={verifiedIcon} alt="" />
+                  {step.note}
+                </strong>
+              </article>
+            ))}
+          </div>
+
+          <aside className="citizen-banner">
+            <div>
+              <p className="eyebrow">Garantia cidadã SUS</p>
+              <h2>Você sabia? Toda criança tem direito à caderneta física no nascimento</h2>
+              <p>
+                A Caderneta da Criança é distribuída pelas maternidades públicas e privadas com
+                apoio do Ministério da Saúde. Ela acompanha não só vacinas, mas marcos de
+                desenvolvimento, crescimento, visão e audição.
+              </p>
+            </div>
+            <a href="#/saude-crianca">Baixar Caderneta em PDF (MS)</a>
+          </aside>
+
+          <section className="myths-section">
+            <p className="eyebrow">Ciência, evidência e cuidado</p>
+            <h2>Mitos e Fatos sobre Vacinação no Brasil</h2>
+            <p>
+              Desmistificamos as dúvidas mais frequentes das famílias com informações de
+              especialistas da Sociedade Brasileira de Imunizações e Fiocruz.
+            </p>
+            <div className="myth-grid">
+              {mythCards.map((card) => (
+                <article className="myth-card" key={card.title}>
+                  <div className="myth-meta">
+                    <span>{card.tag}</span>
+                    <b>{card.meta}</b>
+                  </div>
+                  <h3>{card.title}</h3>
+                  <div className="fact-box">
+                    <img src={verifiedIcon} alt="" />
+                    <p>{card.fact}</p>
+                  </div>
+                  <p>{card.text}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        </section>
+      )}
+
+      {currentPage === 'saude-crianca' && (
+        <section className="child-page standalone-page" aria-labelledby="child-title">
+          <div className="child-hero">
+            <div>
+              <p className="eyebrow">Saúde da criança</p>
+              <h1 id="child-title">As 5 Triagens Neonatais Essenciais</h1>
+              <p>
+                Resultados ainda na maternidade ou na primeira semana na UBS. Exames não
+                invasivos ou de simples punção que protegem o bebê contra sequelas graves
+                preveníveis.
+              </p>
+            </div>
+            <strong>
+              <img src={shieldIcon} alt="" />
+              100% cobertos pelo SUS
+            </strong>
+          </div>
+
+          <div className="screening-grid">
+            {neonatalCards.map(([title, text], index) => (
+              <article className={index === 5 ? 'dark' : undefined} key={title}>
+                <span className="screening-icon">
+                  <img src={index % 2 === 0 ? childIcon : medicalPlusIcon} alt="" />
+                </span>
+                <h2>{title}</h2>
+                <p>{text}</p>
+                <small>{index === 0 ? 'Fazer até o 5º dia de vida' : 'Resultado rápido e orientação familiar'}</small>
+              </article>
+            ))}
+            <article className="dark">
+              <span className="screening-icon">
+                <img src={guideIcon} alt="" />
+              </span>
+              <h2>Perdeu o prazo na maternidade?</h2>
+              <p>
+                Não se preocupe: a sua Unidade Básica de Saúde agenda uma coleta tardia ou
+                avalia se testes complementares são necessários.
+              </p>
+              <small>Localizar sala de vacina e triagem mais próxima</small>
+            </article>
+          </div>
+
+          <section className="infant-vaccine-section">
+            <div className="section-heading-row">
+              <div>
+                <p className="eyebrow">PNI - Programa Nacional de Imunizações</p>
+                <h2>Calendário Nacional de Vacinação Infantil</h2>
+                <p>
+                  Vacinas protegem contra mais de 20 doenças fatais. Veja a trilha do tempo do
+                  nascimento aos 4 anos de idade.
+                </p>
+              </div>
+              <span>Todas as idades (0 a 4 anos)</span>
+            </div>
+            <div className="infant-grid">
+              {infantVaccineCards.map(([age, items]) => (
+                <article key={age}>
+                  <strong>{age}</strong>
+                  <h3>{items[0]}</h3>
+                  <ul>
+                    {items.slice(1).map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="nutrition-section">
+            <p className="eyebrow">Guia alimentar para crianças brasileiras</p>
+            <h2>Nutrição e a Janela de Ouro dos Primeiros 1.000 Dias</h2>
+            <p>
+              Do início da gestação ao 2º aniversário: o período que programa o metabolismo,
+              a imunidade e o paladar para toda a vida adulta.
+            </p>
+            <div className="nutrition-grid">
+              {nutritionMilestones.map(([age, title, text]) => (
+                <article key={age}>
+                  <b>{age}</b>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="booklet-section">
+            <div>
+              <h2>Caderneta da Criança: Passaporte para uma Vida Plena</h2>
+              <p>
+                Entregue gratuitamente nas maternidades públicas e privadas no ato do nascimento.
+                Muito mais que um comprovante de vacinas, ela acompanha crescimento, marcos de
+                desenvolvimento, visão, audição, saúde bucal e orientações familiares.
+              </p>
+            </div>
+            <a className="booklet-card purple" href="#/saude-crianca">Baixar PDF Menina 10 MB</a>
+            <a className="booklet-card teal" href="#/saude-crianca">Baixar PDF Menino 10 MB</a>
+          </section>
+        </section>
+      )}
+
+      {(currentPage === 'login' || currentPage === 'cadastro') && (
+        <section className="auth-page standalone-page" aria-labelledby="auth-title">
+          <div className="auth-card">
+            <div className="auth-tabs">
+              <a className={currentPage === 'login' ? 'active' : undefined} href="#/login">
+                <img src={accessPhoneIcon} alt="" />
+                Entrar (Já tenho conta)
+              </a>
+              <a className={currentPage === 'cadastro' ? 'active' : undefined} href="#/cadastro">
+                <img src={personIcon} alt="" />
+                Criar Nova Conta (1º Acesso)
+              </a>
+            </div>
+
+            <div className="auth-divider">
+              <span>Ou acesse com seus dados cadastrais</span>
+            </div>
+
+            <form className="auth-form">
+              {currentPage === 'cadastro' && (
+                <>
+                  <label>
+                    Insira seu nome completo
+                    <input type="text" placeholder="Insira seu nome completo" />
+                  </label>
+                  <label>
+                    Insira seu CPF
+                    <input type="text" placeholder="000.000.000-00" />
+                  </label>
+                  <label>
+                    Insira seu e-mail
+                    <input type="email" placeholder="email@gmail.com" />
+                  </label>
+                </>
+              )}
+
+              {currentPage === 'login' && (
+                <label>
+                  CPF ou E-mail*
+                  <input type="text" placeholder="Insira seu CPF ou E-mail" />
+                </label>
+              )}
+
+              <label>
+                <span>
+                  Sua Senha VivaBem *
+                  {currentPage === 'login' && <a href="#/login">Esqueci minha senha</a>}
+                </span>
+                <input type="password" placeholder="Digite sua senha cadastrada" />
+              </label>
+
+              <button type="button" className="solid-button auth-submit">
+                Acessar Meu Painel VivaBem
+                <img src={sendIcon} alt="" />
+              </button>
+            </form>
+          </div>
+        </section>
+      )}
+
       <section className="quick-services" id="prevencao" aria-label="Atendimento rápido">
         {serviceCards.map((card) => (
           <article className="service-card" key={card.title}>
@@ -550,7 +1002,6 @@ function App() {
           </article>
         ))}
       </section>
-      )}
 
       <footer className="footer-section">
         <div className="footer-brand">
